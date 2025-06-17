@@ -7,6 +7,7 @@
     <title>pag ljco | posts</title>
 </head>
 <body>
-    <h1>"aqui se mostrara todos los post"</h1>
+    <h1>aqui se mostrara todos los post</h1>
+    
 </body>
 </html>

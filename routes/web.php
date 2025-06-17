@@ -12,7 +12,5 @@ Route:: get('/posts/create', [postController::class, 'create']);
 
 Route:: get('/posts-/{post}', [postController::class,'show']);
 
-/*Route:: get('/posts-/{post}/{category}', function ($post, $category){
-return "aqui se mostrara post el {$post} de la categoria {$category}";
-});*/
+
 

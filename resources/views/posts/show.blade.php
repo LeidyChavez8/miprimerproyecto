@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <h1>"aqui se mostrara el post {{echo $post;}}"</h1>
+    <h1>aqui se mostrara el post {{$post}}</h1>
+  
+  
 </body>
 
 </html>
