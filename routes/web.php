@@ -27,7 +27,7 @@ Route:: get( 'prueba', function(){
 //    return $post;
 
     $post = Post::find(1);
-    return $post->published_at->format('d-m-Y');
+    dd($post->is_active);
     
    
     //actualizar registros
