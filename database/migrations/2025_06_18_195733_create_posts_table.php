@@ -16,9 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->longText('content'); 
             $table->string('categoria');
-            $table->string('cc');
-            $table->string("datos");
-            $table->string("dat");
+            $table->timestamp('published_at');
             $table->timestamps();
 
         });
