@@ -5,7 +5,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\postController;
 
-Route::get('/', HomeController::class );
+Route::get('/', HomeController::class ); 
 
 Route:: get('/posts', [postController::class, 'index']);
 
@@ -15,7 +15,7 @@ Route:: get('/posts-/{post}', [postController::class,'show']);
 
 Route:: get( 'prueba', function(){
   
-//   crear nuevo post  registro
+//   crear nuevo post registro
 //   $post= new Post;
 
 //    $post->name='nombrE dE pRueBa 4';
@@ -26,8 +26,8 @@ Route:: get( 'prueba', function(){
 
 //    return $post;
 
-    $post = Post::find(1);
-    dd($post->is_active);
+    // $post = Post::find(1);
+    // dd($post->is_active);
     
    
     //actualizar registros

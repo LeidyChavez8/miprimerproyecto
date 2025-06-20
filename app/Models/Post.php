@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Post extends Model
 {
     protected $table='posts'; 
+    use HasFactory;
+
 //minuscula y primer mayuscula
     // protected function name(): Attribute{
     //     return Attribute::make(

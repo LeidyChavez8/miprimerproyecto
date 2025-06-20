@@ -24,6 +24,5 @@ pag ljco
        titulo de la alerta
        @endslot
        contenido
-      @endcomponent 
-      <p>hello</p>
-  @endsection
+    @endcomponent 
+   @endsection

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>aqui se mostrara el post {{$post}}</h1>
+    <h1>Titulo {{$post->name}}</h1>
   
   
 </body>
