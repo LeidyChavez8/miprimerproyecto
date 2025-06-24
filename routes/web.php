@@ -11,9 +11,17 @@ Route:: get('/posts', [postController::class, 'index']);
 
 Route:: get('/posts/create', [postController::class, 'create']);
 
-Route:: get('/posts-/{post}', [postController::class,'show']);
+Route::post('/posts',[postController::class,'store']);
 
-Route:: get( 'prueba', function(){
+Route:: get('/posts/{post}', [postController::class,'show']);
+
+Route::get('/posts/{post}/edit',[postController::class,'edit']);
+
+Route::put('/posts/{post}',[postController::class,'update']);
+
+Route::delete('/posts/{post}',[PostController::class,'destroy']);
+
+// Route:: get( 'prueba', function(){
   
 //   crear nuevo post registro
 //   $post= new Post;
@@ -50,7 +58,6 @@ Route:: get( 'prueba', function(){
     // $post = Post::find(1);
     // $post->delete();
     // return "eliminado";
-
-});
+// });
 
 
