@@ -13,4 +13,4 @@
     @endforeach
 </ul> 
 
-
+{{$posts->links()}}
