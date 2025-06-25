@@ -11,6 +11,18 @@ class Post extends Model
     protected $table='posts'; 
     use HasFactory;
 
+    // protected $fillable= [
+    //     'name',
+    //     'slug',
+    //     'category',
+    //     'content',
+    //     'published_at',
+
+    // ];
+    protected $guarded = [
+        'is_active',
+
+    ];
 //minuscula y primer mayuscula
     protected function name(): Attribute{
         return Attribute::make(
