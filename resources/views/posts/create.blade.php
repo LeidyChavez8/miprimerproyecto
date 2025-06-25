@@ -10,34 +10,52 @@
 
 <body>
     <h1>aqui se mostrara el formulario para crear</h1>
+
+    @if ($errors->any())
+    <div>
+        <h2>Errores:</h2>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>
+            {{$error}}
+            </li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    
     <form action="{{route('posts.store')}}" method="POST">
         @csrf
         
     <label>
         Nombre:
-        <input type="text" name= "name">
+        <input type="text" name= "name" value="{{old('name')}}">
     </label>
+   
     <br>
     <br>
 
      <label>
         slug:
-        <input type="text" name= "slug">
+        <input type="text" name= "slug" value="{{old('slug')}}">
     </label>
+  
     <br>
     <br>
 
     <label>
         categoria:
-        <input type="text" name= "category">
+        <input type="text" name= "category" value="{{old('category')}}">
     </label>
+   
     <br>
     <br>
 
     <label>
         Contenido:
-    <textarea name="content" id=""></textarea>
+    <textarea name="content">{{old('content')}}</textarea>
     </label>
+    
     <br>
     <br>
 

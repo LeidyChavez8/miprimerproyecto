@@ -19,6 +19,12 @@ class postController extends Controller
 
     public function store(Request $request)  {
         //  return $request->all(); //mostrar los datos registrados
+        $request->validate([
+            'name' => 'required|min:10|max:255',
+            'slug' => 'required|unique:posts',
+            'category' => 'required',
+            'content' => 'required',
+        ]);
         Post::create($request->all());
         return redirect()->route('posts.index');
         
@@ -34,6 +40,12 @@ class postController extends Controller
     }
 
     public function update(Request $request,Post  $post){
+        $request->validate([
+            'name' => 'required|min:10|max:255',
+            'slug' => "required|unique:posts,slug,{$post->id}",
+            'category' => 'required',
+            'content' => 'required',
+        ]);
 
         $post->update($request->all());
         return redirect()->route('posts.show', $post);

@@ -8,33 +8,47 @@
 </head>
 <body>
     <h1>aqui se mostrara el formulario para editar</h1>
+
+     @if ($errors->any())
+    <div>
+        <h2>Errores:</h2>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>
+            {{$error}}
+            </li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form action="{{route('posts.update', $post)}}" method="POST">
         @csrf
         @method('PUT')
     <label>
         Nombre:
-        <input type="text" name= "name" value="{{$post->name}}">
+        <input type="text" name= "name" value="{{old('name', $post->name)}}">
     </label>
     <br>
     <br>
 
      <label>
         slug:
-        <input type="text" name= "slug" value="{{$post->slug}}">
+        <input type="text" name= "slug" value="{{old('slug', $post->slug)}}">
     </label>
     <br>
     <br>
 
     <label>
         categoria:
-        <input type="text" name= "category" value="{{$post->category}}">
+        <input type="text" name= "category" value="{{old('category', $post->category)}}">
     </label>
     <br>
     <br>
 
     <label>
         Contenido:
-    <textarea name="content">{{$post->content}}
+    <textarea name="content">{{old('content', $post->content)}}
     </textarea>
     </label>
     <br>
