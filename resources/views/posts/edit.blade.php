@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>aqui se mostrara el formulario para editar</h1>
-    <form action="/posts/{{$post->id}}" method="POST">
+    <form action="{{route('posts.update', $post)}}" method="POST">
         @csrf
         @method('PUT')
     <label>
@@ -17,20 +17,29 @@
     </label>
     <br>
     <br>
+
+     <label>
+        slug:
+        <input type="text" name= "slug" value="{{$post->slug}}">
+    </label>
+    <br>
+    <br>
+
     <label>
         categoria:
         <input type="text" name= "category" value="{{$post->category}}">
     </label>
     <br>
     <br>
+
     <label>
         Contenido:
     <textarea name="content">{{$post->content}}
-
     </textarea>
     </label>
     <br>
     <br>
+
     <button type="submit">
         actualizar posts
     </button>

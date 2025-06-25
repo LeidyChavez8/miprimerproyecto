@@ -12,18 +12,17 @@ class Post extends Model
     use HasFactory;
 
 //minuscula y primer mayuscula
-    // protected function name(): Attribute{
-    //     return Attribute::make(
-    //         set: function($value){
-    //             return strtolower($value);
-    //         },
-    //         get: function($value)
-    //         {
-    //             return ucfirst($value);
-    //         }
-    //     ); 
-
-    // }
+    protected function name(): Attribute{
+        return Attribute::make(
+            set: function($value){
+                return strtolower($value);
+            },
+            get: function($value)
+            {
+                return ucfirst($value);
+            }
+        ); 
+     }
     protected function casts(): array{
         return [
             'published_at'=> 'datetime',
@@ -31,5 +30,8 @@ class Post extends Model
         ]; 
     }
 
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 
 }

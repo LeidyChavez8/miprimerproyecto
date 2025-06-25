@@ -7,19 +7,29 @@ use App\Http\Controllers\postController;
 
 Route::get('/', HomeController::class ); 
 
-Route:: get('/posts', [postController::class, 'index']);
+// Route:: get('/posts', [postController::class, 'index'])
+//         ->name('posts.index');
 
-Route:: get('/posts/create', [postController::class, 'create']);
+// Route:: get('/posts/create', [postController::class, 'create'])
+//         ->name('posts.create');
 
-Route::post('/posts',[postController::class,'store']);
+// Route::post('/posts',[postController::class,'store'])
+//         ->name('posts.store');
 
-Route:: get('/posts/{post}', [postController::class,'show']);
+// Route:: get('/posts/{post}', [postController::class,'show'])
+//         ->name('posts.show');
 
-Route::get('/posts/{post}/edit',[postController::class,'edit']);
+// Route::get('/posts/{post}/edit',[postController::class,'edit'])
+//         ->name('posts.edit');
 
-Route::put('/posts/{post}',[postController::class,'update']);
+// Route::put('/posts/{post}',[postController::class,'update'])
+//         ->name('posts.update');
 
-Route::delete('/posts/{post}',[PostController::class,'destroy']);
+// Route::delete('/posts/{post}',[PostController::class,'destroy'])
+//         ->name('posts.destroy');
+
+Route::resource('posts', PostController::class);
+
 
 // Route:: get( 'prueba', function(){
   
