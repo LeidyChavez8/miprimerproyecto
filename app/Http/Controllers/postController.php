@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,9 @@ class postController extends Controller
     return view('posts.create');
     }
 
-    public function store(Request $request)  {
+    public function store(StorePostRequest $request)  {
         //  return $request->all(); //mostrar los datos registrados
+        
         $request->validate([
             'name' => 'required|min:10|max:255',
             'slug' => 'required|unique:posts',
